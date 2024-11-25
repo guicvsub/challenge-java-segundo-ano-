@@ -1,0 +1,84 @@
+@startuml
+
+class AppRedeAncora {
+    - nomeApp: String
+    - versao: String
+    + iniciarApp(): void
+    + fecharApp(): void
+}
+
+class Usuario {
+    - id: int
+    - nome: String
+    - email: String
+    - senha: String
+    + realizarLogin(): boolean
+}
+
+class Cliente extends Usuario {
+    - telefone: String
+    + consultarPecas(): void
+    + avaliarMecanico(mecanico: Mecanico, nota: int): void
+}
+
+class Mecanico extends Usuario {
+    - especialidade: String
+    - experiencia: int
+    + consultarPedidos(): void
+    + responderConsulta(): void
+}
+
+class Pedido {
+    - idPedido: int
+    - dataCriacao: Date
+    - status: String
+    + atualizarStatus(novoStatus: String): void
+}
+
+class Peca {
+    - idPeca: int
+    - descricao: String
+    - preco: double
+    - imagem: String
+    + exibirDetalhes(): void
+}
+
+class Loja {
+    - idLoja: int
+    - nome: String
+    - endereco: String
+    - telefone: String
+    + listarPecasDisponiveis(): List<Peca>
+}
+
+class SistemaRanqueamento {
+    - idRanqueamento: int
+    - mecanico: Mecanico
+    - notaMedia: double
+    - totalAvaliacoes: int
+    + atualizarNota(novaNota: int): void
+}
+
+class VisaoComputacional {
+    + identificarPeca(imagem: String): Peca
+}
+
+class Encomenda {
+    - idEncomenda: int
+    - cliente: Cliente
+    - mecanico: Mecanico
+    - listaPecas: List<Peca>
+    + agendarVistoria(data: Date): void
+    + encomendarPecas(): void
+}
+
+AppRedeAncora --> Usuario : "1 utiliza *"
+Cliente --> Pedido : "1 realiza *"
+Cliente --> Encomenda : "1 solicita *"
+Encomenda --> Peca : "* inclui *"
+Mecanico --> Encomenda : "1 atende *"
+Loja --> Peca : "1 fornece *"
+Mecanico --> SistemaRanqueamento : "1 possui 1"
+VisaoComputacional --> Peca : "1 identifica 1"
+
+@enduml
