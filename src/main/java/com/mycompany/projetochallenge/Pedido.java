@@ -20,5 +20,5 @@ class Pedido {
         System.out.println("Status atualizado para: " + novoStatus);
     }
 
-    // Getters e Setters omitidos para simplicidade
+
 }

@@ -18,5 +18,5 @@ class Peca {
         System.out.println("Descrição: " + descricao + ", Preço: " + preco);
     }
 
-    // Getters e Setters omitidos para simplicidade
+   
 }

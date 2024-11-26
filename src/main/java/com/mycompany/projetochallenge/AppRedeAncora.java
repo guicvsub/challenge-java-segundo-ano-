@@ -11,7 +11,7 @@ package com.mycompany.projetochallenge;
 import java.util.Date;
 import java.util.List;
 
-// Classe principal do aplicativo
+
 class AppRedeAncora {
     private String nomeApp;
     private String versao;

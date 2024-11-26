@@ -34,5 +34,5 @@ public class Mecanico extends Usuario {
         return sistemaRanqueamento;
     }
 
-    // Getters e Setters omitidos para simplicidade
+  
 }

@@ -21,5 +21,5 @@ class Loja {
         return null; // Simulação
     }
 
-    // Getters e Setters omitidos para simplicidade
+
 }
