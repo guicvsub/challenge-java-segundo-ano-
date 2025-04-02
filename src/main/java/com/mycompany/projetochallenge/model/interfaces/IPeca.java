@@ -10,4 +10,5 @@ package com.mycompany.projetochallenge.model.interfaces;
  */
 public interface IPeca {
     
+    
 }
