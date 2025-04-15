@@ -1,29 +1,71 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.projetochallenge.model;
-
-import com.mycompany.projetochallenge.Mecanico;
-import com.mycompany.projetochallenge.Usuario;
 
 /**
  *
  * @author gui
  */
-public class Cliente extends Usuario {
+public class Cliente {
+    private int id;
+    private String nome;
+    private String email;
+    private String senha;
     private String telefone;
 
-    public Cliente(int id, String nome, String email, String senha) {
-        super(id, nome, email, senha);
+    public Cliente(int id, String nome, String email, String senha, String telefone) {
+        this.id = id;
+        this.nome = nome;
+        this.email = email;
+        this.senha = senha;
+        this.telefone = telefone;
     }
 
-    public void consultarPecas() {
-        System.out.println("Consultando peças disponíveis");
+    // Getters
+    public int getId() {
+        return id;
     }
 
-    public void avaliarMecanico(Mecanico mecanico, int nota) {
-        System.out.println("Avaliando mecânico " + mecanico.getNome() + " com nota " + nota);
-        mecanico.getSistemaRanqueamento().atualizarNota(nota);
+    public String getNome() {
+        return nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    // Setters (caso necessário)
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    // Método toString (opcional, para depuração)
+    @Override
+    public String toString() {
+        return "Cliente{" + "id=" + id + ", nome=" + nome + ", email=" + email + ", telefone=" + telefone + '}';
     }
 }
+
+

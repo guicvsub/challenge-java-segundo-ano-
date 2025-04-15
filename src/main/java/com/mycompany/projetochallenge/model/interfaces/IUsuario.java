@@ -6,8 +6,23 @@ package com.mycompany.projetochallenge.model.interfaces;
 
 /**
  *
- * @author gui
+
+/**
+ *
+
  */
 public interface IUsuario {
     
+    // Getters
+    int getId();
+    String getNome();
+    String getEmail();
+    String getSenha();
+    
+    // Setters
+    void setEmail(String email);
+    void setSenha(String senha);
+    
+    // Método de ação
+    boolean realizarLogin();
 }

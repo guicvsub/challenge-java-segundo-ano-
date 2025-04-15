@@ -10,5 +10,23 @@ package com.mycompany.projetochallenge.model.interfaces;
  */
 public interface IPeca {
     
+/**
+ *
+ * @author gui
+     * @return 
+ */
+
+ 
+    int getIdPeca();
+    String getDescricao();
+    double getPreco();
+    String getImagem();
     
+    void setDescricao(String descricao);
+    void setPreco(double preco);
+    void setImagem(String imagem);
+    
+    void exibirDetalhes();
 }
+
+
