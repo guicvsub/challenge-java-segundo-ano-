@@ -207,4 +207,8 @@ public class MecanicoDAO {
 
         return null;
     }
+
+    Mecanico buscarMecanicoPorId(int encomendaId) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
