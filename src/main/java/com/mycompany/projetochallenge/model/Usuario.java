@@ -1,54 +1,92 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.projetochallenge.model;
 
 import com.mycompany.projetochallenge.model.interfaces.IUsuario;
 
-/**
- *
- * @author gui
- */
-public class Usuario implements IUsuario{
+public class Usuario implements IUsuario {
+    private int id;
+    private String nome;
+    private String email;
+    private String senha;
 
-    public Usuario(int aInt, String string, String string0, String string1) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    // Construtor com ID
+    public Usuario(int id, String nome, String email, String senha) {
+        this.id = id;
+        this.nome = nome;
+        this.email = email;
+        this.senha = senha;
     }
 
-    public String getNome() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    // Construtor sem ID
+    public Usuario(String nome, String email, String senha) {
+        this.nome = nome;
+        this.email = email;
+        this.senha = senha;
     }
 
-    public String getEmail() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public String getSenha() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
+    @Override
     public int getId() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return id;
     }
 
-    public void setId(int aInt) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    @Override
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Override
+    public String getNome() {
+        return nome;
+    }
+
+    @Override
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    @Override
+    public String getEmail() {
+        return email;
     }
 
     @Override
     public void setEmail(String email) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.email = email;
+    }
+
+    @Override
+    public String getSenha() {
+        return senha;
     }
 
     @Override
     public void setSenha(String senha) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.senha = senha;
     }
 
     @Override
+    public String toString() {
+        return "Usuario{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Usuario)) return false;
+
+        Usuario usuario = (Usuario) o;
+        return id == usuario.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return id;
+    }
+
     public boolean realizarLogin() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
 }

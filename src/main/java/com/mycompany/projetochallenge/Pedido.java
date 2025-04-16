@@ -4,21 +4,3 @@
  */
 package com.mycompany.projetochallenge;
 
-import java.util.Date;
-
-/**
- *
- * @author gui
- */
-class Pedido {
-    private int idPedido;
-    private Date dataCriacao;
-    private String status;
-
-    public void atualizarStatus(String novoStatus) {
-        this.status = novoStatus;
-        System.out.println("Status atualizado para: " + novoStatus);
-    }
-
-
-}

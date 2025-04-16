@@ -89,7 +89,6 @@ public class Mecanico implements IMecanico {
         this.senha = senha;
     }
 
-    @Override
     public boolean realizarLogin() {
         // Lógica de login simples — você pode adaptar
         return email != null && senha != null && !email.isEmpty() && !senha.isEmpty();
@@ -114,5 +113,10 @@ public class Mecanico implements IMecanico {
 
     public void setSistemaRanqueamento(SistemaRanqueamento sistemaRanqueamento) {
         this.sistemaRanqueamento = sistemaRanqueamento;
+    }
+
+    @Override
+    public void setNome(String nome) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

@@ -1,0 +1,77 @@
+@startuml
+title Diagrama UML do Projeto Challenge (com interfaces e DAOs)
+
+interface IUsuario
+interface IEncomenda
+interface IMecanico
+interface IPeca
+interface ISistemaRanqueamento
+interface IAutenticavel
+
+class Usuario {
+  + realizarLogin()
+}
+
+class Cliente {
+  + consultarPecas()
+  + avaliarMecanico(mecanico : Mecanico, nota : int)
+  + atualizarTelefone(novoTelefone : String)
+  + validarEmail() : boolean
+}
+
+class Mecanico {
+  + consultarPedidos()
+  + responderConsulta()
+  + getSistemaRanqueamento() : SistemaRanqueamento
+}
+
+class Peca {
+  + exibirDetalhes()
+}
+
+abstract class Encomenda {
+  + encomendarPecas()
+  + agendarVistoria(data : Date)
+}
+
+class Pedido {
+  // Métodos e atributos relevantes
+}
+
+class SistemaRanqueamento {
+  // Métodos e atributos relevantes
+}
+
+class Loja {
+  // Métodos e atributos relevantes
+}
+
+class UsuarioDAO
+class ClienteDAO
+class MecanicoDAO
+class PecaDAO
+class EncomendaDAO
+
+IUsuario <|.. Usuario
+IUsuario <|.. Cliente
+IUsuario <|.. Mecanico
+IEncomenda <|.. Encomenda
+IMecanico <|.. Mecanico
+IPeca <|.. Peca
+ISistemaRanqueamento <|.. SistemaRanqueamento
+
+UsuarioDAO ..> Usuario
+ClienteDAO ..> Cliente
+MecanicoDAO ..> Mecanico
+PecaDAO ..> Peca
+EncomendaDAO ..> Encomenda
+
+Cliente "1" *-- "*" Peca : consulta
+Mecanico "1" *-- "1" SistemaRanqueamento
+Encomenda "1" *-- "1" Cliente
+Encomenda "1" *-- "1" Mecanico
+Encomenda "1" *-- "*" Peca
+Pedido "1" *-- "1" Cliente
+Pedido "1" *-- "*" Peca
+
+@enduml
